@@ -1,12 +1,13 @@
 
 import os
+import shutil
 
-path = f"C:{os.getenv('HOMEPATH')}\Desktop\\"
-
+base_path = f"C:{os.getenv('HOMEPATH')}\Desktop\\"
 dir_name = 'tmp'
+dir_path = base_path + dir_name
 
 try:
-    os.rmdir(path + dir_name)
-    os.mkdir(path + dir_name)
+    shutil.rmtree(dir_path)
+    os.mkdir(dir_path)
 except FileNotFoundError:
     ...
