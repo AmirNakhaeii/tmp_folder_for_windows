@@ -5,7 +5,7 @@ Temporary directory for windows
 ---
 </br>
 
-**I thought to myself, as we have a temporary (tmp) directory in Linux, why not in Windows? When the computer restarts, all contents of this directory will be deleted.**
+**I thought with myself, as we have a temporary (tmp) directory in Linux, why not in Windows? When the computer restarts, all contents of this directory will be deleted.**
 
 ## How to make tmp folder
 First, you need the main.exe file. To create this file, read the bottom of the page, then run command.
